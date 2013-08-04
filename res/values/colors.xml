@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="font">#95A5A6</color>
+    <color name="view_bg">#2C3E50</color>
+    <color name="input_bg">#ECF0F1</color>
+    <color name="btn_bg">#161616</color>
+</resources>

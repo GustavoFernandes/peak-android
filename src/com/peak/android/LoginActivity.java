@@ -1,19 +1,17 @@
-package com.peaknode.android;
+package com.peak.android;
 
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.peaknode.android.R;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,7 +93,7 @@ public class LoginActivity extends Activity {
             else if(error == 1) {// Error from not finding "error" key.
 
                 try {
-                    Toast.makeText(this, obj.getString("realname"), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Welcome, " + obj.getString("realname"), Toast.LENGTH_LONG).show();
                 }
 
                 catch(Exception e1) {

@@ -1,4 +1,4 @@
-package com.peaknode.android;
+package com.peak.android;
 
 import android.util.Log;
 import org.apache.http.HttpEntity;

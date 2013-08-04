@@ -1,13 +1,13 @@
 package com.peak.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.peaknode.android.R;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
@@ -22,7 +22,7 @@ public class LoginActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.login);
 
         Log.d("Peak", "LoginActivity onCreate()");
     }
@@ -90,16 +90,10 @@ public class LoginActivity extends Activity {
             if(error == 0) // Error converting original result String to JSONObject.
                 e.printStackTrace();
 
-            else if(error == 1) {// Error from not finding "error" key.
-
-                try {
-                    Toast.makeText(this, "Welcome, " + obj.getString("realname"), Toast.LENGTH_LONG).show();
-                }
-
-                catch(Exception e1) {
-                    e1.printStackTrace();
-                }
-
+            else if(error == 1) { // Error from not finding "error" key.
+                Intent mainIntent = new Intent(this, MainActivity.class);
+                mainIntent.putExtra("userObjStr", obj.toString());
+                startActivity(mainIntent);
             }
         }
     }
